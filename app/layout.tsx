@@ -17,21 +17,21 @@ import { MobileNav } from "@/components/nav/mobile-nav"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://imgsrc.io"),
-  title: "imgsrc",
+  metadataBase: new URL("https://og.nextjsbase.com"),
+  title: "NextJS Base OG Image Generator",
   description: "Generate beautiful Open Graph images with zero effort.",
   openGraph: {
-    title: "imgsrc",
+    title: "NextJS Base OG Image Generator",
     description: "Generate beautiful Open Graph images with zero effort.",
     type: "website",
-    url: "https://imgsrc.io",
-    siteName: "imgsrc",
+    url: "https://og.nextjsbase.com",
+    siteName: "NextJS Base OG Image Generator",
     images: [
       {
-        url: "https://imgsrc.io/og.png",
+        url: "https://og.nextjsbase.com/og.png",
         width: 1200,
         height: 630,
-        alt: "imgsrc - Generate beautiful Open Graph images with zero effort.",
+        alt: "NextJS Base OG Image Generator - Generate beautiful Open Graph images with zero effort.",
       },
     ],
     locale: "en_US",
@@ -62,8 +62,8 @@ export default async function RootLayout({
                 <Link href="/">
                   <Image
                     className="block dark:hidden"
-                    src="/logo.svg"
-                    alt="imgsrc Logo"
+                    src="/logo.png"
+                    alt="NextJS Base OG Image Generator Logo"
                     width={36}
                     height={36}
                   />
@@ -72,8 +72,8 @@ export default async function RootLayout({
                 <Link href="/">
                   <Image
                     className="hidden dark:block"
-                    src="/logo_dark.svg"
-                    alt="imgsrc Logo"
+                    src="/logo.png"
+                    alt="NextJS Base OG Image Generator Logo"
                     width={36}
                     height={36}
                   />
@@ -83,8 +83,8 @@ export default async function RootLayout({
 
             <div className="hidden space-x-2 sm:flex">
               <Button variant="link">
-                <Link href="#" target="_blank">
-                  Support
+                <Link href="https://nextjsbase.com" target="_blank">
+                  back to NextJS Base
                 </Link>
               </Button>
 
@@ -109,7 +109,7 @@ export default async function RootLayout({
             <div className="flex justify-between">
               <div className="flex items-center space-x-2">
                 <div className="font-mono font-semibold">
-                  <Link href="https://imgsrc.io">.imgsrc</Link>
+                  <Link href="https://og.nextjsbase.com">.og</Link>
                 </div>
 
                 <div>
@@ -118,7 +118,7 @@ export default async function RootLayout({
                   </Button>
 
                   <Button variant="link" asChild>
-                    <Link href="#" target="_blank">
+                    <Link href="mailto:hi@huglemon.com" target="_blank">
                       Support
                     </Link>
                   </Button>

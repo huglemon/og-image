@@ -48,7 +48,7 @@ export const noticeTemplateDefault: NoticeTemplate = {
       color: "#030712",
     },
     logo: {
-      url: absoluteUrl("/samples/logos/bun.svg"),
+      url: absoluteUrl("/logo.svg"),
     },
   },
   background: {

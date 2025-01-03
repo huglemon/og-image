@@ -40,7 +40,11 @@ export default function Home() {
               </div>
             </Card>
 
-            <Tabs defaultValue="save">
+            <div className="flex justify-end">
+              <SaveImageButton />
+            </div>
+
+            {/* <Tabs defaultValue="save">
               <TabsList className="grid grid-cols-2">
                 <TabsTrigger value="save">Save Image</TabsTrigger>
                 <TabsTrigger value="api">API Request</TabsTrigger>
@@ -70,7 +74,7 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <SaveImageButton />
+                    
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -94,7 +98,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </TabsContent>
-            </Tabs>
+            </Tabs> */}
           </div>
         </div>
       </div>

@@ -35,30 +35,36 @@ export const imageRightTemplateDefault: ImageRightTemplate = {
   name: "og:image-right",
   params: {
     tag: {
-      text: "Marketing",
+      text: "NextJSBase",
       fontFamily: "inter",
       fontWeight: 400,
       fontSize: 20,
       color: "#030712",
     },
     title: {
-      text: "Generate Beautiful Open Graph Images",
+      text: "Ship your AI SaaS with NextJSBase in hours",
       fontFamily: "inter",
       fontWeight: 700,
       fontSize: 60,
       color: "#030712",
     },
     logo: {
-      url: absoluteUrl("/samples/logos/imgsrc.png"),
+      url: absoluteUrl("/logo.svg"),
     },
     image: {
-      url: absoluteUrl("/samples/imgsrc.png"),
+      url: absoluteUrl("/dashboard.png"),
     },
   },
   background: {
     type: "linear-gradient",
     direction: "to top right",
-    colorStops: ["rgb(236, 72, 153)", "rgb(239, 68, 68)", "rgb(234, 179, 8)"],
+    colorStops: [
+      "#d5d4d0 0%",
+      "#d5d4d0 1%",
+      "#eeeeec 31%",
+      "#efeeec 75%",
+      "#e9e9e7 100%",
+    ],
     noise: 0.15,
     gridOverlay: {
       pattern: "grid",

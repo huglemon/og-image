@@ -28,15 +28,15 @@ export function MobileNav() {
         <SheetHeader className="pb-4 text-left">
           <SheetTitle>
             <Image
-              src="/logo.svg"
-              alt="imgsrc"
+              src="/logo.png"
+              alt="NextJS Base OG Image Generator"
               width={32}
               height={32}
               className="block dark:hidden"
             />
             <Image
-              src="/logo_dark.svg"
-              alt="imgsrc"
+              src="/logo.png"
+              alt="NextJS Base OG Image Generator"
               width={32}
               height={32}
               className="hidden dark:block"
@@ -51,7 +51,7 @@ export function MobileNav() {
             className="justify-start px-0"
             asChild
           >
-            <Link href="mailto:support@imgsrc.io" target="_blank">
+            <Link href="mailto:hi@huglemon.com" target="_blank">
               Support
             </Link>
           </Button>
