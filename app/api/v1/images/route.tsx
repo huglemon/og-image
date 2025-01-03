@@ -8,6 +8,9 @@ import { templates } from "@/components/templates"
 export const runtime = "edge"
 
 export const POST = async (request: NextRequest) => {
+  return new Response("Hello World", {
+    status: 200,
+  })
   const body = await request.json()
 
   const template = templateSchema.parse(body)
