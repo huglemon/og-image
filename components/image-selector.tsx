@@ -1,3 +1,4 @@
+'use client'
 import { useRef, useState } from "react"
 import { Cross2Icon, FileIcon } from "@radix-ui/react-icons"
 
@@ -18,13 +19,12 @@ export function ImageSelector({
   onChange: (v: string | undefined) => void
   initialFileName?: string
 }) {
-  const [file, setFile] = useState<File | undefined>(
-    initialFileName ? new File([], initialFileName) : undefined
-  )
+  const [fileName, setFileName] = useState(initialFileName || '')
+  const [preview, setPreview] = useState('')
   const inputElement = useRef<HTMLInputElement>(null)
 
   function handleRemove() {
-    setFile(undefined)
+    setFileName('')
     onChange(undefined)
   }
 
@@ -32,8 +32,21 @@ export function ImageSelector({
     inputElement.current?.click()
   }
 
+  const handleFileSelect = (file: File | null) => {
+    if (!file) return
+    
+    setFileName(file.name)
+    const reader = new FileReader()
+    reader.onload = (e: ProgressEvent<FileReader>) => {
+      if (e.target?.result) {
+        setPreview(e.target.result.toString())
+      }
+    }
+    reader.readAsDataURL(file)
+  }
+
   return (
-    <>
+    <div>
       <input
         id={id}
         ref={inputElement}
@@ -47,20 +60,7 @@ export function ImageSelector({
           const file = e.target.files[0]
           if (!file) return
 
-          const reader = new FileReader()
-
-          reader.addEventListener(
-            "load",
-            () => {
-              setFile(file)
-              onChange(reader.result as string)
-
-              inputElement.current!.value = ""
-            },
-            false
-          )
-
-          reader.readAsDataURL(file)
+          handleFileSelect(file)
         }}
       />
 
@@ -70,9 +70,9 @@ export function ImageSelector({
             variant="outline"
             className="justify-start space-x-1 overflow-hidden"
           >
-            <span>{file?.name ? "File:" : "Choose Image:"}</span>
+            <span>{fileName ? "File:" : "Choose Image:"}</span>
             <span className="overflow-hidden overflow-ellipsis font-mono font-normal">
-              {file?.name || "(No file chosen)"}
+              {fileName || "(No file chosen)"}
             </span>
           </Button>
         </DropdownMenuTrigger>
@@ -91,6 +91,11 @@ export function ImageSelector({
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    </>
+      {preview && (
+        <div className="mt-2">
+          <img src={preview} alt="Preview" className="max-w-full h-auto" />
+        </div>
+      )}
+    </div>
   )
 }
