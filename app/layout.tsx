@@ -1,11 +1,10 @@
 import "./globals.css"
+import Script from 'next/script'
 
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { TemplateStoreProvider } from "@/providers/template-store-provider"
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
@@ -144,8 +143,11 @@ export default async function RootLayout({
 
         <Toaster />
 
-        <SpeedInsights />
-        <Analytics />
+        <Script
+          defer
+          src="https://analytics.inwind.cn/script.js"
+          data-website-id="ba45a5f6-7f03-4c72-afdd-6c22824b2b5b"
+        />
       </body>
     </html>
   )
