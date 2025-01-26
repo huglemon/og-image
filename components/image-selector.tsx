@@ -39,7 +39,9 @@ export function ImageSelector({
     const reader = new FileReader()
     reader.onload = (e: ProgressEvent<FileReader>) => {
       if (e.target?.result) {
-        setPreview(e.target.result.toString())
+        const imageData = e.target.result.toString()
+        setPreview(imageData)
+        onChange(imageData)
       }
     }
     reader.readAsDataURL(file)
